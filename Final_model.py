@@ -9,10 +9,18 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 import numpy as np
+import gdown
+
+# File ID and output path
+file_id = "1Y3OOXoRutgHeMDXlgWqhiwH9iNNEuOIB"
+output = "RandomForest.sav"
+
+# Download the file
+gdown.download(f"https://drive.google.com/uc?id={file_id}", output, quiet=False)
 
 ## loading saved models
 
-fraud_model = pickle.load(open("https://drive.google.com/file/d/1Y3OOXoRutgHeMDXlgWqhiwH9iNNEuOIB/view?usp=drive_link",'rb'))
+fraud_model = pickle.load(open(output,'rb'))
 scaler = pickle.load(open("https://github.com/coalabear07/FraudPrediction/blob/main/scaler.sav",'rb'))
 
 
