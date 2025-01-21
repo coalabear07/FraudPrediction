@@ -9,7 +9,6 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import numpy as np
 import gdown
-import os
 
 # Define the URL for the Google Drive file
 file_id = '1Sbgz9Z2T63ufQn2z9f60GWyv0Q2MpKWk'  # Replace with your actual file ID
