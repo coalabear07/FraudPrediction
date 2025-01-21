@@ -15,7 +15,7 @@ import os
 
 # Define the Google Drive link with the correct file ID
 model_url = "https://drive.google.com/uc?id=1Sbgz9Z2T63ufQn2z9f60GWyv0Q2MpKWk"  # Your model file ID
-model_output = "fraud_model.pkl"  # The file name where the model will be saved locally
+model_output = "RandomForest.pkl"  # The file name where the model will be saved locally
 
 # Download the model file if it doesn't exist locally
 if not os.path.exists(model_output):
