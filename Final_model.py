@@ -8,59 +8,9 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 import numpy as np
-import gdown
-import os
-
-# Define the Google Drive link with the correct file ID
-model_url = "https://drive.google.com/uc?id=1Sbgz9Z2T63ufQn2z9f60GWyv0Q2MpKWk"  # Your model file ID
-model_output = "RandomForest.pkl"  # The file name where the model will be saved locally
-
-# Check if the model file exists locally
-if not os.path.exists(model_output):
-    st.write(f"Model file '{model_output}' not found locally. Attempting to download...")
-    try:
-        gdown.download(model_url, model_output, quiet=False)
-        st.write("Model file downloaded successfully!")
-    except Exception as e:
-        st.write(f"Error downloading model: {e}")
-else:
-    st.write(f"Model file '{model_output}' found locally.")
-
-# Load the model
-try:
-    with open(model_output, 'rb') as model_file:
-        fraud_model = pickle.load(model_file)
-    st.write("Model loaded successfully.")
-except Exception as e:
-    st.write(f"Error loading model: {e}")
-
-# Load the scaler
-scaler_url = "https://raw.githubusercontent.com/coalabear07/FraudPrediction/main/scaler.sav"
-scaler_output = "scaler.sav"
-
-if not os.path.exists(scaler_output):
-    st.write(f"Scaler file '{scaler_output}' not found locally. Attempting to download...")
-    try:
-        gdown.download(scaler_url, scaler_output, quiet=False)
-        st.write("Scaler file downloaded successfully!")
-    except Exception as e:
-        st.write(f"Error downloading scaler: {e}")
-else:
-    st.write(f"Scaler file '{scaler_output}' found locally.")
-
-# Load the scaler
-try:
-    with open(scaler_output, 'rb') as scaler_file:
-        scaler = pickle.load(scaler_file)
-    st.write("Scaler loaded successfully.")
-except Exception as e:
-    st.write(f"Error loading scaler: {e}")
-
-# Continue with the rest of your app code...
-
 
 #fraud_model = pickle.load(open(output,'rb'))
-#scaler = pickle.load(open("https://github.com/coalabear07/FraudPrediction/blob/main/scaler.sav",'rb'))
+scaler = pickle.load(open("https://github.com/coalabear07/FraudPrediction/blob/main/scaler.sav",'rb'))
 
 
 
