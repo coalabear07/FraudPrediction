@@ -10,7 +10,7 @@ from streamlit_option_menu import option_menu
 import numpy as np
 
 #fraud_model = pickle.load(open(output,'rb'))
-scaler = pickle.load(open("https://github.com/coalabear07/FraudPrediction/blob/main/scaler.sav",'rb'))
+scaler = pickle.load(open("scaler.sav",'rb'))
 
 
 
@@ -41,7 +41,7 @@ if (selected == "Introduction") :
     """)
     
     # Add an image related to the dataset
-    st.image("C:/Users/hp/Downloads/Dataset.png", caption="Credit Card Fraudulent Dataset", use_container_width=True)
+    st.image("Dataset.png", caption="Credit Card Fraudulent Dataset", use_container_width=True)
 
     # Information Paragraph 2: About the Model
     st.write("""
@@ -50,7 +50,7 @@ if (selected == "Introduction") :
     The following diagrams shows the results of all the models tested using test dataset where Random Forest Models performed the best out of all the models.
     """)
     # Add an image related to the dataset
-    st.image("C:/Users/hp/Downloads/Models Performance.png", caption="Model Performance on the Dataset", use_container_width=True)
+    st.image("Models Performance.png", caption="Model Performance on the Dataset", use_container_width=True)
     
     st.write("""
     **Random Forest** :
