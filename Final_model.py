@@ -49,7 +49,7 @@ if (selected == "Introduction") :
     st.header("Overview")
     
     st.write("""
-    This application is built using the **Credit Card Transactions Fraud Detection Dataset** (taken from Kaggle Platform), a comprehensive dataset designed for fraud detection in financial transactions. 
+    This application is aims to predict the transaction based on the historical data.The application is built using the **Credit Card Transactions Fraud Detection Dataset** (taken from Kaggle Platform), a comprehensive dataset designed for fraud detection in financial transactions. 
     The dataset is divided into two parts:
     - **Training Set**: Contains 1.3 million transaction records used to train the predictive model.
     - **Test Set**: Comprises 550,000 transaction records for evaluating the model's performance.
