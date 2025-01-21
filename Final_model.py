@@ -12,8 +12,8 @@ import numpy as np
 import gdown
 
 # File ID and output path
-file_id = "1Y3OOXoRutgHeMDXlgWqhiwH9iNNEuOIB"
-output = "RandomForest.sav"
+file_id = "1Sbgz9Z2T63ufQn2z9f60GWyv0Q2MpKWk"
+output = "RandomForest.pkl"
 
 # Download the file
 gdown.download(f"https://drive.google.com/uc?id={file_id}", output, quiet=False)
