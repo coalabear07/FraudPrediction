@@ -11,16 +11,25 @@ from streamlit_option_menu import option_menu
 import numpy as np
 import gdown
 
-# File ID and output path
-file_id = "1Sbgz9Z2T63ufQn2z9f60GWyv0Q2MpKWk"
-output = "RandomForest.pkl"
+# Function to download files from Google Drive
+def download_file_from_drive(file_url, output):
+    gdown.download(file_url, output, quiet=False)
 
-# Download the file
-gdown.download(f"https://drive.google.com/uc?id={file_id}", output, quiet=False)
+# Google Drive link (direct download link)
+model_url = "https://drive.google.com/uc?id=1Sbgz9Z2T63ufQn2z9f60GWyv0Q2MpKWk"
+
+# Check if model exists locally, otherwise download it
+if not os.path.exists("RandomForest.pkl"):
+    st.info("Downloading the model file. This may take a few moments...")
+    download_file_from_drive(model_url, "RandomForest.pkl")
+
+# Load the model
+with open("RandomForest.pkl", "rb") as file:
+    fraud_model = pickle.load(file)
 
 ## loading saved models
 
-fraud_model = pickle.load(open(output,'rb'))
+#fraud_model = pickle.load(open(output,'rb'))
 scaler = pickle.load(open("https://github.com/coalabear07/FraudPrediction/blob/main/scaler.sav",'rb'))
 
 
