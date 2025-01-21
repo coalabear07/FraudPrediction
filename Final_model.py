@@ -13,7 +13,7 @@ import numpy as np
 ## loading saved models
 
 fraud_model = pickle.load(open("https://drive.google.com/file/d/1Y3OOXoRutgHeMDXlgWqhiwH9iNNEuOIB/view?usp=drive_link",'rb'))
-scaler = pickle.load(open("C:/Users/hp/JPN/scaler.sav",'rb'))
+scaler = pickle.load(open("https://github.com/coalabear07/FraudPrediction/blob/main/scaler.sav",'rb'))
 
 
 
