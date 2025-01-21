@@ -12,26 +12,29 @@ import numpy as np
 import gdown
 import os
 
-# Function to download files from Google Drive
-def download_file_from_drive(file_url, output):
-    gdown.download(file_url, output, quiet=False)
 
-# Google Drive link (direct download link)
-model_url = "https://drive.google.com/uc?id=1Sbgz9Z2T63ufQn2z9f60GWyv0Q2MpKWk"
+# Define the Google Drive link with the correct file ID
+model_url = "https://drive.google.com/uc?id=1Sbgz9Z2T63ufQn2z9f60GWyv0Q2MpKWk"  # Your model file ID
+model_output = "fraud_model.pkl"  # The file name where the model will be saved locally
 
-# Check if model exists locally, otherwise download it
-if not os.path.exists("RandomForest.pkl"):
-    st.info("Downloading the model file. This may take a few moments...")
-    download_file_from_drive(model_url, "RandomForest.pkl")
+# Download the model file if it doesn't exist locally
+if not os.path.exists(model_output):
+    gdown.download(model_url, model_output, quiet=False)
 
 # Load the model
-with open("RandomForest.pkl", "rb") as file:
-    fraud_model = pickle.load(file)
+fraud_model = pickle.load(open(model_output, 'rb'))
 
-## loading saved models
+# Load the scaler from GitHub or other valid source (if needed)
+scaler_url = "https://raw.githubusercontent.com/coalabear07/FraudPrediction/main/scaler.sav"
+scaler_output = "scaler.sav"
+
+if not os.path.exists(scaler_output):
+    gdown.download(scaler_url, scaler_output, quiet=False)
+
+scaler = pickle.load(open(scaler_output, 'rb'))
 
 #fraud_model = pickle.load(open(output,'rb'))
-scaler = pickle.load(open("https://github.com/coalabear07/FraudPrediction/blob/main/scaler.sav",'rb'))
+#scaler = pickle.load(open("https://github.com/coalabear07/FraudPrediction/blob/main/scaler.sav",'rb'))
 
 
 
