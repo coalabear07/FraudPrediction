@@ -9,13 +9,14 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import numpy as np
 import gdown
+import os
 
 # Define the URL for the Google Drive file
 file_id = '1Sbgz9Z2T63ufQn2z9f60GWyv0Q2MpKWk'  # Replace with your actual file ID
 gdown_url = f'https://drive.google.com/uc?id={file_id}'
 
 # Specify the path where you want to save the model file
-model_path = 'RandomForest.pkl'
+model_path = './RandomForest.pkl'
 
 # Download the model file if it doesn't already exist
 if not os.path.exists(model_path):
